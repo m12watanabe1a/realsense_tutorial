@@ -4,8 +4,8 @@
 int main(int argc, char *argv[]) try {
   rs2::colorizer color_map;
   rs2::config cfg;
-  cfg.enable_stream(RS2_STREAM_COLOR, 848, 480, RS2_FORMAT_BGR8, 30);
-  cfg.enable_stream(RS2_STREAM_DEPTH, 848, 480, RS2_FORMAT_Z16, 30);
+  cfg.enable_stream(RS2_STREAM_COLOR, 1280, 720, RS2_FORMAT_BGR8, 30);
+  cfg.enable_stream(RS2_STREAM_DEPTH, 1280, 720, RS2_FORMAT_Z16, 30);
 
   rs2::pipeline pipe;
   pipe.start(cfg);
@@ -21,9 +21,9 @@ int main(int argc, char *argv[]) try {
     std::cout << "width: " << w << " height: " << h << std::endl;
 
     cv::Mat color_image(cv::Size(w, h), CV_8UC3, (void *)color.get_data(),
-                  cv::Mat::AUTO_STEP);
+                        cv::Mat::AUTO_STEP);
     cv::Mat depth_image(cv::Size(w, h), CV_8UC3, (void *)depth.get_data(),
-                  cv::Mat::AUTO_STEP);
+                        cv::Mat::AUTO_STEP);
     cv::imshow("color", color_image);
     cv::imshow("depth", depth_image);
     cv::waitKey(1);
