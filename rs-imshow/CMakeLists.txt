@@ -7,7 +7,7 @@ project(RealsenseExamplesImshow)
 
 find_package(PkgConfig)
 pkg_check_modules(RealSense2 REQUIRED realsense2)
-pkg_check_modules(OpenCV REQUIRED opencv)
+pkg_check_modules(OpenCV REQUIRED opencv4)
 include_directories(${RealSense2_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 link_directories(${RealSense2_LIBRARY_DIRS} ${OpenCV_LIBRARY_DIRS})
 

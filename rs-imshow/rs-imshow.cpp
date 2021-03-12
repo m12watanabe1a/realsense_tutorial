@@ -1,5 +1,6 @@
 #include <librealsense2/rs.hpp>
-#include <opencv2/opencv.hpp>
+#include <opencv4/opencv2/opencv.hpp>
+#include <opencv4/opencv2/highgui.hpp>
 
 int main(int argc, char *argv[]) try {
   rs2::colorizer color_map;
@@ -9,8 +10,8 @@ int main(int argc, char *argv[]) try {
 
   rs2::pipeline pipe;
   pipe.start(cfg);
-  cv::namedWindow("color", CV_WINDOW_AUTOSIZE);
-  cv::namedWindow("depth", CV_WINDOW_AUTOSIZE);
+  cv::namedWindow("color");
+  cv::namedWindow("depth");
 
   while (true) {
     rs2::frameset data = pipe.wait_for_frames();
