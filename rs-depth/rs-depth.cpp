@@ -11,8 +11,8 @@ int main(int argc, char *argv[]) try {
 
   rs2::pipeline pipe;
 
-  cv::namedWindow("color", CV_WINDOW_AUTOSIZE);
-  cv::namedWindow("depth", CV_WINDOW_AUTOSIZE);
+  cv::namedWindow("color");
+  cv::namedWindow("depth");
 
   auto profile = pipe.start(cfg);
   auto depth_stream =

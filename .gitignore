@@ -4,14 +4,14 @@
 # Build -----------------------------------------------------------------------
 
 ### Output and Cache Directories ###
-/External/
-/Debug/
-/Docs/
-/Release/
-/build/
-/bin/
-/out/
-/cmake-build-*/
+External/
+Debug/
+Docs/
+Release/
+build/
+bin/
+out/
+cmake-build-*/
 
 ### CMake ###
 CMakeCache.txt
